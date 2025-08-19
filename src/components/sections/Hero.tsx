@@ -2,6 +2,7 @@
 
 import React, { useMemo, useRef } from "react";
 import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
+import { RoundedBox } from "@react-three/drei/core/RoundedBox";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import * as THREE from "three";
@@ -39,6 +40,11 @@ function LogoCube() {
 
   const materials = useMemo(() => {
     const faces = textures.slice(0, 6);
+    // Normalize texture settings for crisp transparent logos
+    faces.forEach((tex) => {
+      tex.colorSpace = THREE.SRGBColorSpace;
+      tex.needsUpdate = true;
+    });
     return faces.map((tex) => new THREE.MeshStandardMaterial({ map: tex, transparent: true }));
   }, [textures]);
 
@@ -52,22 +58,54 @@ function LogoCube() {
 
   return (
     <group ref={groupRef}>
-      {/* Base colored cube */}
-      <mesh castShadow receiveShadow>
-        <boxGeometry args={[1.8, 1.8, 1.8]} />
-        <meshStandardMaterial color="hsl(256.13,47.21%,38.63%)" metalness={0.6} roughness={0.35} />
-      </mesh>
-      {/* Logo overlays on each face */}
-      <mesh castShadow receiveShadow>
-        <boxGeometry args={[1.8, 1.8, 1.8]} />
-        {/* Apply textures per-face using attach index */}
-        <meshStandardMaterial attach="material-0" map={materials[0].map as THREE.Texture} transparent polygonOffset polygonOffsetFactor={-1} />
-        <meshStandardMaterial attach="material-1" map={materials[1].map as THREE.Texture} transparent polygonOffset polygonOffsetFactor={-1} />
-        <meshStandardMaterial attach="material-2" map={materials[2].map as THREE.Texture} transparent polygonOffset polygonOffsetFactor={-1} />
-        <meshStandardMaterial attach="material-3" map={materials[3].map as THREE.Texture} transparent polygonOffset polygonOffsetFactor={-1} />
-        <meshStandardMaterial attach="material-4" map={materials[4].map as THREE.Texture} transparent polygonOffset polygonOffsetFactor={-1} />
-        <meshStandardMaterial attach="material-5" map={materials[5].map as THREE.Texture} transparent polygonOffset polygonOffsetFactor={-1} />
-      </mesh>
+      {/* Base rounded cube */}
+      {(() => {
+        const size = 1.8;
+        const radius = 0.22;
+        const smoothness = 8;
+        const epsilon = 0.04; // push slightly outward to avoid any z-fighting with rounded edges
+        const inset = radius * 1.05;
+        const faceSize = size - 2 * inset;
+        const half = size / 2;
+        return (
+          <>
+            <RoundedBox args={[size, size, size]} radius={radius} smoothness={smoothness} castShadow receiveShadow>
+              <meshStandardMaterial color="hsl(256.13,47.21%,38.63%)" metalness={0.6} roughness={0.35} />
+            </RoundedBox>
+            {/* Logo overlays on each face as slightly inset planes to preserve rounded edges */}
+            {/* +X */}
+            <mesh position={[half + epsilon, 0, 0]} rotation={[0, Math.PI / 2, 0]} castShadow={false} receiveShadow={false} renderOrder={10}>
+              <planeGeometry args={[faceSize, faceSize]} />
+              <meshStandardMaterial map={materials[0].map as THREE.Texture} transparent depthWrite={false} side={THREE.DoubleSide} />
+            </mesh>
+            {/* -X */}
+            <mesh position={[-half - epsilon, 0, 0]} rotation={[0, -Math.PI / 2, 0]} castShadow={false} receiveShadow={false} renderOrder={10}>
+              <planeGeometry args={[faceSize, faceSize]} />
+              <meshStandardMaterial map={materials[1].map as THREE.Texture} transparent depthWrite={false} side={THREE.DoubleSide} />
+            </mesh>
+            {/* +Y */}
+            <mesh position={[0, half + epsilon, 0]} rotation={[-Math.PI / 2, 0, 0]} castShadow={false} receiveShadow={false} renderOrder={10}>
+              <planeGeometry args={[faceSize, faceSize]} />
+              <meshStandardMaterial map={materials[2].map as THREE.Texture} transparent depthWrite={false} side={THREE.DoubleSide} />
+            </mesh>
+            {/* -Y */}
+            <mesh position={[0, -half - epsilon, 0]} rotation={[Math.PI / 2, 0, 0]} castShadow={false} receiveShadow={false} renderOrder={10}>
+              <planeGeometry args={[faceSize, faceSize]} />
+              <meshStandardMaterial map={materials[3].map as THREE.Texture} transparent depthWrite={false} side={THREE.DoubleSide} />
+            </mesh>
+            {/* +Z (front) */}
+            <mesh position={[0, 0, half + epsilon]} rotation={[0, 0, 0]} castShadow={false} receiveShadow={false} renderOrder={10}>
+              <planeGeometry args={[faceSize, faceSize]} />
+              <meshStandardMaterial map={materials[4].map as THREE.Texture} transparent depthWrite={false} side={THREE.DoubleSide} />
+            </mesh>
+            {/* -Z (back) */}
+            <mesh position={[0, 0, -half - epsilon]} rotation={[0, Math.PI, 0]} castShadow={false} receiveShadow={false} renderOrder={10}>
+              <planeGeometry args={[faceSize, faceSize]} />
+              <meshStandardMaterial map={materials[5].map as THREE.Texture} transparent depthWrite={false} side={THREE.DoubleSide} />
+            </mesh>
+          </>
+        );
+      })()}
     </group>
   );
 }
