@@ -20,7 +20,7 @@ const FinalCTA = () => {
           {/* Trust Badge */}
           <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8 text-sm font-medium text-white animate-fade-in">
             <Star className="w-4 h-4 text-accent-amber" />
-            <span>Trusted by 500+ growing businesses</span>
+            <span>Trusted by 100+ growing businesses</span>
           </div>
 
           {/* Main Headline */}

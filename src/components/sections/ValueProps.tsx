@@ -73,7 +73,7 @@ const ValueProps = () => {
         <div className="text-center mt-16">
           <div className="inline-flex items-center space-x-2 text-sm text-muted-foreground bg-background/50 backdrop-blur-sm border border-border rounded-full px-6 py-3">
             <div className="w-2 h-2 bg-accent-amber rounded-full animate-pulse" />
-            <span>Join 500+ businesses already growing with InterStateRankers</span>
+            <span>Join 100+ businesses already growing with InterStateRankers</span>
           </div>
         </div>
       </div>

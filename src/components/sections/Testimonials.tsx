@@ -2,8 +2,9 @@
 import { useState, useEffect } from "react";
 import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-const Testimonials = () => {
+const Testimonials = ({ compact = false, className = "" }: { compact?: boolean; className?: string }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const testimonials = [
@@ -62,7 +63,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-20 bg-card/30">
+    <section className={cn("bg-card/30", compact ? "pt-16 pb-10" : "py-20", className)}>
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">

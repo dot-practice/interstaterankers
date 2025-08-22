@@ -6,13 +6,13 @@ const StatsResults = () => {
 
   const stats = [
     {
-      value: 99.9,
+      value: "95 - 98",
       suffix: "%",
       label: "Calls Answered",
       description: "Never miss another lead"
     },
     {
-      value: 200,
+      value: "30 - 50",
       suffix: "%", 
       prefix: "+",
       label: "Lead Conversion",
@@ -26,7 +26,7 @@ const StatsResults = () => {
       description: "Time to first page rankings"
     },
     {
-      value: 500,
+      value: 100,
       suffix: "+",
       label: "Growing Businesses",
       description: "Trust InterStateRankers"

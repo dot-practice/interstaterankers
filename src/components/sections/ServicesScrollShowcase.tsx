@@ -12,6 +12,42 @@ type ServiceSection = {
 
 const SERVICES: ServiceSection[] = [
   {
+    id: "seo",
+    title: "Search Engine Optimization",
+    description: "Technical, on-page, and local SEO to rank and win the demand you deserve.",
+    icon: Search,
+    bullets: [
+      "Technical audits",
+      "Content & on-page",
+      "Local SEO",
+      "Reporting & insights"
+    ]
+  },
+  {
+    id: "gmb",
+    title: "Google My Business Optimization",
+    description: "Optimize and manage your Google Business Profile to dominate local search and maps.",
+    icon: LayoutGrid,
+    bullets: [
+      "Profile setup & optimization",
+      "Category & services tuning",
+      "Posts & updates",
+      "Review strategy & replies"
+    ]
+  },
+  {
+    id: "web-development",
+    title: "Web Development",
+    description: "Fast, modern websites engineered for SEO and conversion from day one.",
+    icon: Code,
+    bullets: [
+      "Next.js/React builds",
+      "Performance optimization",
+      "Accessibility & SEO",
+      "Analytics instrumentation"
+    ]
+  },
+  {
     id: "answering",
     title: "Answering Services",
     description: "24/7 professional coverage so you never miss a lead. AI-assisted routing and real-time reporting.",
@@ -33,18 +69,6 @@ const SERVICES: ServiceSection[] = [
       "Reactivation campaigns",
       "Appointment setting",
       "QA and compliance"
-    ]
-  },
-  {
-    id: "gmb",
-    title: "Google My Business Optimization",
-    description: "Optimize and manage your Google Business Profile to dominate local search and maps.",
-    icon: LayoutGrid,
-    bullets: [
-      "Profile setup & optimization",
-      "Category & services tuning",
-      "Posts & updates",
-      "Review strategy & replies"
     ]
   },
   {
@@ -72,27 +96,15 @@ const SERVICES: ServiceSection[] = [
     ]
   },
   {
-    id: "web-development",
-    title: "Web Development",
-    description: "Fast, modern websites engineered for SEO and conversion from day one.",
-    icon: Code,
+    id: "ppc-management",
+    title: "PPC Management",
+    description: "High-intent paid traffic and conversion optimization for reliable ROI.",
+    icon: DollarSign,
     bullets: [
-      "Next.js/React builds",
-      "Performance optimization",
-      "Accessibility & SEO",
-      "Analytics instrumentation"
-    ]
-  },
-  {
-    id: "app-development",
-    title: "App Development",
-    description: "Cross-platform apps that scale with your business and users.",
-    icon: Smartphone,
-    bullets: [
-      "iOS & Android",
-      "API integrations",
-      "Scalable architecture",
-      "App analytics"
+      "Account audits",
+      "Keyword & audience strategy",
+      "Ad creation & testing",
+      "Landing & conversion tracking"
     ]
   },
   {
@@ -108,27 +120,15 @@ const SERVICES: ServiceSection[] = [
     ]
   },
   {
-    id: "seo",
-    title: "Search Engine Optimization",
-    description: "Technical, on-page, and local SEO to rank and win the demand you deserve.",
-    icon: Search,
+    id: "app-development",
+    title: "App Development",
+    description: "Cross-platform apps that scale with your business and users.",
+    icon: Smartphone,
     bullets: [
-      "Technical audits",
-      "Content & on-page",
-      "Local SEO",
-      "Reporting & insights"
-    ]
-  },
-  {
-    id: "ppc-management",
-    title: "PPC Management",
-    description: "High-intent paid traffic and conversion optimization for reliable ROI.",
-    icon: DollarSign,
-    bullets: [
-      "Account audits",
-      "Keyword & audience strategy",
-      "Ad creation & testing",
-      "Landing & conversion tracking"
+      "iOS & Android",
+      "API integrations",
+      "Scalable architecture",
+      "App analytics"
     ]
   }
 ];

@@ -33,16 +33,16 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-heading font-semibold">Services</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><Link href="/services/seo" className="hover:text-foreground transition-colors">Search Engine Optimization</Link></li>
+              <li><Link href="/services/gmb" className="hover:text-foreground transition-colors">Google My Business Optimization</Link></li>
+              <li><Link href="/services/web-development" className="hover:text-foreground transition-colors">Web Development</Link></li>
               <li><Link href="/services/answering" className="hover:text-foreground transition-colors">24/7 Answering</Link></li>
               <li><Link href="/services/calling" className="hover:text-foreground transition-colors">Outbound Calling</Link></li>
               <li><Link href="/services/content-marketing" className="hover:text-foreground transition-colors">Content Marketing</Link></li>
               <li><Link href="/services/social-media-marketing" className="hover:text-foreground transition-colors">Social Media Marketing</Link></li>
-              <li><Link href="/services/web-development" className="hover:text-foreground transition-colors">Web Development</Link></li>
-              <li><Link href="/services/app-development" className="hover:text-foreground transition-colors">App Development</Link></li>
-              <li><Link href="/services/graphic-designing" className="hover:text-foreground transition-colors">Graphic Designing</Link></li>
-              <li><Link href="/services/seo" className="hover:text-foreground transition-colors">Search Engine Optimization</Link></li>
               <li><Link href="/services/ppc-management" className="hover:text-foreground transition-colors">PPC Management</Link></li>
-              <li><Link href="/services/gmb" className="hover:text-foreground transition-colors">Google My Business Optimization</Link></li>
+              <li><Link href="/services/graphic-designing" className="hover:text-foreground transition-colors">Graphic Designing</Link></li>
+              <li><Link href="/services/app-development" className="hover:text-foreground transition-colors">App Development</Link></li>
             </ul>
           </div>
 

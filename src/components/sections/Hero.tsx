@@ -30,12 +30,12 @@ function CameraControls() {
 function LogoCube() {
   const groupRef = useRef<THREE.Group>(null);
   const textures = useLoader(THREE.TextureLoader, [
-    "/logos/google.png",
-    "/logos/bing.png",
-    "/logos/safari.png",
-    "/logos/edge.png",
-    "/logos/firefox.png",
-    "/logos/opera.png",
+    "/logos/ads.png",
+    "/logos/gmb.png",
+    "/logos/meta.png",
+    "/logos/wordpress.png",
+    "/logos/linkedin.png",
+    "/logos/calls.png",
   ]) as THREE.Texture[];
 
   const materials = useMemo(() => {
@@ -125,11 +125,11 @@ const Hero = () => {
               AI answering and SEO-first experiences built to convert. A modern stack that works while you sleep.
             </p>
             <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 pt-2">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90 glow-button text-lg px-8 py-6 h-auto font-semibold">
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90 glow-button text-lg px-8 py-6 h-auto font-semibold rounded-full">
               Get a Proposal
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-              <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm text-lg px-8 py-6 h-auto font-semibold">
+              <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm text-lg px-8 py-6 h-auto font-semibold rounded-full">
               <Play className="mr-2 h-5 w-5" />
               Talk to an Expert
             </Button>

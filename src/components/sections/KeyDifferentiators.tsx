@@ -126,13 +126,13 @@ const KeyDifferentiators = () => {
   const pillars: Pillar[] = [
     {
       icon: Headphones,
-      title: "Answering & Calling Services",
-      description: "24/7 professional coverage ensures you never miss a lead. AI-powered routing and real-time reporting.",
+      title: "B2B B2C Lead Generation",
+      description: "Comprehensive lead generation solutions for both B2B and B2C markets. AI-powered qualification and multi-channel outreach.",
       features: ["Live call answering", "Lead qualification", "Appointment booking", "Call analytics dashboard"]
     },
     {
       icon: TrendingUp,
-      title: "Google My Business & SEO",
+      title: "Google Business Profile Optimization",
       description: "Local visibility and search optimization that drives measurable business growth.",
       features: ["Profile optimization", "Local SEO", "Review strategy", "Performance reporting"]
     }

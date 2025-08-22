@@ -10,7 +10,7 @@ const FeaturedProjects = () => {
       services: ["Answering", "SEO"],
       results: "300% increase in qualified leads",
       description: "24/7 call coverage and local SEO optimization resulted in substantial lead growth.",
-      stats: { calls: "+2,500", leads: "+180%", ranking: "#1 Local" }
+      stats: { calls: "+100-200", leads: "50-75%", ranking: "#1 Local" }
     },
     {
       title: "Home Services Company", 
@@ -18,7 +18,7 @@ const FeaturedProjects = () => {
       services: ["Calling", "Google My Business"],
       results: "250% conversion rate improvement",
       description: "Outbound follow-ups and Google My Business optimization transformed their sales process.",
-      stats: { conversion: "+250%", revenue: "+$2M", appointments: "+400%" }
+      stats: { conversion: "70-80%", revenue: "+$2M", appointments: "+400%" }
     },
     {
       title: "Medical Practice",
